@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+
+  "permissions": {
+    "allow": [
+      "Skill",
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git status)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git branch*)",
+      "Bash(git show*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run typecheck*)",
+      "Bash(npm test*)",
+      "Bash(npm run test*)",
+      "Bash(npx tsc --noEmit*)"
+    ],
+    "ask": [
+      "Write",
+      "Edit",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git rebase*)",
+      "Bash(git reset*)",
+      "Bash(git stash*)",
+      "Bash(npm install*)",
+      "Bash(rm *)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~*)"
+    ]
+  },
+
+  "includeGitInstructions": true,
+  "includeCoAuthoredBy": false,
+
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git -C \"$PWD\" diff --quiet && git -C \"$PWD\" diff --cached --quiet || echo '[claude] Reminder: you have uncommitted changes.'"
+          }
+        ]
+      }
+    ]
+  }
+}

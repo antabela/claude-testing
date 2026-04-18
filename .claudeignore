@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.output/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+.nyc_output/
+lcov-report/
+
+# Caches
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.prettiercache
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Lock files (large; remove these lines if debugging dependency issues)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
